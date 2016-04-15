@@ -10,7 +10,7 @@ app.controller('mainCtrl', [
     ];
 
     $scope.addResponse = function(){
-      if(!$scope.contents || $scope.contents === '') { return; }
+      if(!$scope.content || $scope.content === '') { return; }
       $scope.responses.push({content: $scope.content, date: Date()});
       $scope.content = '';
     };

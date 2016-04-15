@@ -2,16 +2,27 @@
   <head>
     <title>Before I Die...</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="ngApp.js"></script>
   </head>
   <body ng-app="before" ng-controller="mainCtrl">
-    <form ng-submit="addResponse()">
-      <input type="text" ng-model="content"></input>
-      <button type="submit">Add</button>
-    </form>
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>Before I die, I want to</h2>
+      </div>
+      <div class="col-lg-6">
+        <form ng-submit="addResponse()">
+          <div class="input-group">
+            <input type="text" ng-model="content" class="form-control" placeholder="Your response...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Add</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
     <div ng-repeat="response in responses">
       {{response.content}} on {{response.date}}
     </div>
