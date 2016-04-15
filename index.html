@@ -5,8 +5,8 @@
     <script src="ngApp.js"></script>
   </head>
   <body ng-app="before" ng-controller="mainCtrl">
-    <div>
-      {{test}}
+    <div ng-repeat="response in responses">
+      {{response.content}} on {{response.date}}
     </div>
   </body>
 </html>
