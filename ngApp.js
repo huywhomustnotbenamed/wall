@@ -8,4 +8,9 @@ app.controller('mainCtrl', [
       {content: 'Live in Spain', date: '1/1/2016'},
       {content: 'See the Grand Canyon', date: '1/1/2016'}
     ];
+
+    $scope.addResponse = function(){
+      $scope.responses.push({content: $scope.content, date: Date()});
+      $scope.content = '';
+    };
 }]);
