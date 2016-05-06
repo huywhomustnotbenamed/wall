@@ -1,4 +1,4 @@
-var app = angular.module('never', []);
+var app = angular.module('never', ['ui.router']);
 
 app.controller('mainCtrl', [
   '$scope',
