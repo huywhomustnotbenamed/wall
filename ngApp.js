@@ -1,13 +1,10 @@
-var app = angular.module('before', []);
+var app = angular.module('never', []);
 
 app.controller('mainCtrl', [
   '$scope',
-  function($scope){
-    $scope.responses = [
-      {content: 'Pilot and airplane', date: '1/1/2016'},
-      {content: 'Live in Spain', date: '1/1/2016'},
-      {content: 'See the Grand Canyon', date: '1/1/2016'}
-    ];
+  'responses',
+  function($scope, responses){
+    $scope.responses = responses.responses
 
     $scope.addResponse = function(){
       if(!$scope.content || $scope.content === '') { return; }
@@ -15,3 +12,14 @@ app.controller('mainCtrl', [
       $scope.content = '';
     };
 }]);
+
+app.factory('responses', [function(){
+  var object = {
+    responses: [
+      {content: 'Pilot and airplane', date: '1/1/2016'},
+      {content: 'Live in Spain', date: '1/1/2016'},
+      {content: 'See the Grand Canyon', date: '1/1/2016'}
+    ];
+  };
+  return object;
+}])
